@@ -1,0 +1,2 @@
+parameters:
+    dmzx.infotozip.table.infotozip: '%core.table_prefix%infotozip'

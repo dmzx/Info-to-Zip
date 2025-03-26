@@ -1,0 +1,9 @@
+{% if S_INFOTOZIP_ENABLE %}
+<div class="panel bg3" id="infotozip-panel">
+	<div class="inner">
+		<p>{{ lang('LINK_EXPLAIN') }}</p>
+		<div id="infotozipcontent"></div>
+	</div>
+</div>
+<script>window.onload = Reload_Body('app.php/infotozip?mode=input','infotozipcontent');</script>
+{% endif %}

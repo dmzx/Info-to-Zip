@@ -1,0 +1,103 @@
+imports:
+    - { resource: 'tables.yml' }
+
+services:
+    dmzx.infotozip.listener:
+        class: 'dmzx\infotozip\event\listener'
+        arguments:
+            - '@user'
+            - '@dbal.conn'
+            - '@dbal.tools'
+            - '@config'
+            - '@template'
+            - '@auth'
+            - '@dmzx.infotozip.functions_infotozip'
+        tags:
+            - { name: 'event.listener' }
+
+    dmzx.infotozip.controller:
+        class: 'dmzx\infotozip\controller\main'
+        arguments:
+            - '@dmzx.infotozip.core.infotozip.preview.button'
+            - '@dmzx.infotozip.core.infotozip.download.button'
+            - '@dmzx.infotozip.core.infotozip.input.link'
+            - '@dmzx.infotozip.core.infotozip.make.link'
+            - '@request'
+
+    dmzx.infotozip.core.infotozip.preview.button:
+        class: 'dmzx\infotozip\core\infotozip_preview_button'
+        arguments:
+            - '@auth'
+            - '@template'
+            - '@user'
+            - '@dbal.conn'
+            - '@dbal.tools'
+            - '@config'
+            - '@dmzx.infotozip.functions_infotozip'
+            - '%core.root_path%'
+            - '%dmzx.infotozip.table.infotozip%'
+
+    dmzx.infotozip.core.infotozip.download.button:
+        class: 'dmzx\infotozip\core\infotozip_download_button'
+        arguments:
+            - '@auth'
+            - '@template'
+            - '@user'
+            - '@dbal.conn'
+            - '@dbal.tools'
+            - '@config'
+            - '@dmzx.infotozip.functions_infotozip'
+            - '%dmzx.infotozip.table.infotozip%'
+
+    dmzx.infotozip.core.infotozip.input.link:
+        class: 'dmzx\infotozip\core\infotozip_input_link'
+        arguments:
+            - '@auth'
+            - '@template'
+            - '@user'
+            - '%core.php_ext%'
+            - '%core.root_path%'
+
+    dmzx.infotozip.core.infotozip.make.link:
+        class: 'dmzx\infotozip\core\infotozip_make_link'
+        arguments:
+            - '@auth'
+            - '@template'
+            - '@user'
+            - '@dbal.conn'
+            - '@request'
+            - '@dmzx.infotozip.functions_infotozip'
+            - '%core.root_path%'
+
+    dmzx.infotozip.controller.acp:
+        class: 'dmzx\infotozip\controller\acp_controller'
+        arguments:
+            - '@config'
+            - '@language'
+            - '@log'
+            - '@request'
+            - '@template'
+            - '@user'
+
+    dmzx.infotozip.ucp.controller:
+        class: 'dmzx\infotozip\controller\ucp_controller'
+        arguments:
+            - '@user'
+            - '@template'
+            - '@dbal.conn'
+            - '@request'
+            - '@config'
+            - '@pagination'
+            - '@dmzx.infotozip.functions_infotozip'
+            - '%core.root_path%'
+            - '%core.php_ext%'
+            - '%dmzx.infotozip.table.infotozip%'
+
+    dmzx.infotozip.functions_infotozip:
+        class: 'dmzx\infotozip\core\functions_infotozip'
+        arguments:
+            - '@config'
+            - '@template'
+            - '@ext.manager'
+            - '@path_helper'
+      

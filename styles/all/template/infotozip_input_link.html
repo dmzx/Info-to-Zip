@@ -1,0 +1,19 @@
+<div class="inner">
+
+	<p><h3>{{ lang('INFOTOZIP_LINK_ADD_TITLE') }}</h3></p>
+
+	<fieldset class="fields2">
+		<dl>
+			<dt><label for="infotoziplink">{{ lang('INFOTOZIP_LINK_ADD_TITLE_BOX1') }}</label></dt>
+			<dd>
+				<textarea name="infotoziplink" id="infotoziplink" class="inputbox" rows="4" cols="50"></textarea>
+				<i class="buttoncopy" data-copytarget="#infotoziplink">{{ lang('INFOTOZIP_COPY') }}</i>
+			</dd>
+		</dl>
+	</fieldset>
+	<fieldset class="submit-buttons">
+		<input type="button" value="{{ lang('INFOTOZIP_LINK_ADD_BUTTON') }}" class="button1" onclick="Reload_Body('{{ U_MAKE }}&infotoziplink='+encodeURIComponent(document.getElementById('infotoziplink').value),'infotozipcontent');">
+		<hr class="dashed">
+	</fieldset>
+	<p>{{ lang('INFOTOZIP_LINK_ADD_EXPLAIN') }}</p>
+</div>

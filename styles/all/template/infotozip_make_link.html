@@ -1,0 +1,36 @@
+{% if ERRORS %}
+<div id="infotoziperror" class="rules">
+	<div class="inner">
+		<strong>{{ lang('WARNING') }}</strong> {{ T_ERROR }}
+	</div>
+</div>
+<fieldset class="submit-buttons">
+	<input type="button" value="{{ lang('INFOTOZIP_LINK_ADD_BUTTON') }}" class="button1" onclick="Reload_Body('{{ U_MAKE }}','infotozipcontent');">
+	<hr class="dashed">
+</fieldset>
+{% else %}
+<div class="inner">
+
+	<p><h3>{{ lang('INFOTOZIP_LINK_ADD_CORRECT') }}</h3></p>
+
+	<fieldset class="fields2">
+		<dl>
+			<dt><label for="infotoziplink">{{ lang('INFOTOZIP_LINK_ADD_TITLE_BOX3') }}</label></dt>
+			<dd><input type="text" name="infotoziplink" id="infotoziplink" value="{{ LINK_OK }}" size="100%" ><i class="buttoncopy" data-copytarget="#infotoziplink">{{ lang('INFOTOZIP_COPY') }}</i></dd>
+		</dl>
+		<dl>
+			<dt><label for="infotozip_find_username"></label></dt>
+			<dd>
+				<input type="button" value="{{ lang('INFOTOZIP_LINK_ADD_TO_POST') }}" class="button1" onclick="insert_text(infotoziplink.value, false); return false;">
+			</dd>
+		</dl>
+	</fieldset>
+	<p><h3>{{ lang('INFOTOZIP_LINK_ADD_OTHER') }}</h3></p>
+	<fieldset class="submit-buttons">
+		<input type="button" value="{{ lang('INFOTOZIP_LINK_ADD_BUTTON') }}" class="button1" onclick="Reload_Body('{{ U_MAKE }}','infotozipcontent');">
+		<hr class="dashed">
+	</fieldset>
+	<p>{{ lang('INFOTOZIP_LINK_ADD_EXPLAIN') }}</p>
+</div>
+
+{% endif %}

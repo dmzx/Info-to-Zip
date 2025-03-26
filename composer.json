@@ -1,0 +1,46 @@
+{
+	"name": "dmzx/infotozip",
+	"type": "phpbb-extension",
+	"description": "Information to Zip URL.",
+	"homepage": "https://www.dmzx-web.net",
+	"version": "1.0.0",
+	"time": "2025-03-25",
+	"keywords": [
+		"phpbb",
+		"extension",
+		"infotozip"
+	],
+	"license": "GPL-2.0-only",
+	"authors": [
+		{
+			"name": "dmzx",
+			"email": "info@dmzx-web.net",
+			"homepage": "https://www.dmzx-web.net",
+			"role": "Extension developer"
+		},
+		{
+			"name": "martin",
+			"homepage": "https://www.martins-play-ground.uk",
+			"role": "Extension developer"
+		}
+	],
+	"require": {
+		"php": ">=7.1.3",
+		"composer/installers": "~1.0"
+	},
+	"require-dev": {
+		"phpbb/epv": "dev-master"
+	},
+	"extra": {
+		"display-name": "Info to Zip",
+		"soft-require": {
+			"phpbb/phpbb": ">=3.3.0,<4.0.0@dev"
+		},
+		"version-check": {
+			"host": "www.dmzx-web.net",
+			"directory": "/versions",
+			"filename": "infotozip_version.json",
+			"ssl": true
+		}
+	}
+}

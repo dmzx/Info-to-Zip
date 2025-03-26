@@ -1,0 +1,53 @@
+{% INCLUDE 'ucp_header.html' %}
+{% if S_INFOTOZIP_ENABLE %}
+<div class="panel">
+	<div class="inner">
+		<h2>{{ INFOTOZIP_TITLE }}</h2>
+		<p>{{ lang('INFOTOZIP_LINK_DESCRIPTION') }}<p>
+		<table class="table1 responsive">
+			<thead>
+				<tr>
+					<th align="left">{{ INFOTOZIP_COLUM1 }}</th>
+					<th style="text-align: center;">{{ INFOTOZIP_COLUM2 }}</th>
+					<th style="text-align: center;">{{ INFOTOZIP_COLUM3 }}</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% if TRUE_LINK %}
+					{% for logs in loops.logs %}
+					{% if logs.S_ROW_COUNT is even %}<tr class="bg1">{% else %}<tr class="bg2">{% endif %}
+						<td>{{ logs.OWNER }}</td>
+						<td style="text-align: center;">{{ logs.LINK }}</td>
+						<td style="text-align: center;">{{ logs.SUBJECT }}</td>
+					</tr>
+				{% endfor %}
+				{% else %}
+					<tr>
+						<td class="bg1" colspan="4" align="center"><span class="gen">{{ lang('INFOTOZIP_NOLOGS') }}</span></td>
+					</tr>
+				{% endif %}
+			</tbody>
+		</table>
+		{% if TRUE_LINK %}
+			<form action="{{ S_LOGS_ACTION }}" method="post">
+				<fieldset class="display-options">
+					<label>{{ lang('SORT_BY') }} {{ S_SELECT_SORT_KEY }}</label>
+					<label>{{ S_SELECT_SORT_DIR }} <input type="submit" name="sort" value="{{ lang('GO') }}" class="button2" /></label>
+				</fieldset>
+			</form>
+
+			<div class="pagination">
+				{{ lang('INFOTOZIP_PAY_TOTAL') ~ lang('COLON') }} {{ TOTAL_POSTS }} {{ lang('INFOTOZIP_LINK') }}
+				{% INCLUDE 'pagination.html' %}
+			</div>
+		{% endif %}
+	</div>
+</div>
+{% else %}
+<div class="rules">
+	<div class="inner">
+		<strong>{{ lang('INFOTOZIP_SWITCHED_OFF') }}</strong>
+	</div>
+</div>
+{% endif %}
+{% INCLUDE 'ucp_footer.html' %}

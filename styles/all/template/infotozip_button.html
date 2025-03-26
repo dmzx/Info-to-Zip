@@ -1,0 +1,146 @@
+<style>
+dl.infotozip-box {
+	border-radius: 5px;
+	display: block;
+	margin-bottom: 5px;
+	height: 57px;
+	padding: 10px 10px 8px;
+	position: relative;
+	width: 300px;
+	text-decoration: none !important;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+	font-weight: bold;
+	color: #ffffff !important;
+	font-family: Verdana,Arial,Helvetica,sans-serif;
+}
+
+dl.infotozip-box dt a {
+	color: #333333 !important;
+	display: block;
+	font-weight: bold;
+	padding-bottom: 5px;
+	text-decoration: none !important;
+	font-size: small;
+	font-family:Geneva, Arial, Helvetica, sans-serif;
+}
+
+dl.infotozip-box dd a, dl.download-contrib dd {
+	color: #ffffff !important;
+	display: block;
+	font-weight: bold;
+	padding-right: 40px;
+	text-decoration: none !important;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+dl.infotozip-box.orange, .big-tag.orange {
+	background: rgba(0, 0, 0, 0) linear-gradient(45deg, #ffc561 0%, #ff8a2b 100%) repeat scroll 0 0;
+}
+
+.infotozip-boxs.orange {
+	background-color: #ff8a2b;
+	border-color: #6b92bd;
+	color: #171515;
+}
+
+dl.infotozip-box.blue, .big-tag.blue {
+	background: rgba(0, 0, 0, 0) linear-gradient(to bottom, #698cc0 0%, #7ca7e4 100%) repeat scroll 0 0;
+}
+
+.infotozip-boxs.blue {
+	background-color: #7ca7e4;
+	border-color: #6b92bd;
+	color: #171515;
+}
+
+dl.infotozip-box.light-blue, .big-tag.light-blue {
+	background: rgba(0, 0, 0, 0) linear-gradient(to bottom, #a9cded 0%, #56b1df 100%) repeat scroll 0 0;
+}
+
+.infotozip-boxs.light-blue {
+	background-color: #56b1df;
+	border-color: #6b92bd;
+	color: #171515;
+}
+
+dl.infotozip-box.dirty-blue, .big-tag.dirty-blue {
+	background: rgba(0, 0, 0, 0) linear-gradient(to bottom, #8492a5 0%, #9ca9bc 100%) repeat scroll 0 0;
+}
+
+.infotozip-boxs.dirty-blue {
+	background-color: #9ca9bc;
+	border-color: #6b92bd;
+	color: #171515;
+}
+
+dl.infotozip-box.purple, .big-tag.purple {
+	background: rgba(0, 0, 0, 0) linear-gradient(45deg, #8d7fcc 0%, #9262cc 100%) repeat scroll 0 0;
+}
+
+.infotozip-boxs.purple {
+	background-color: #9262cc;
+	border-color: #6b92bd;
+	color: #171515;
+}
+
+dl.infotozip-box.green, .big-tag.green {
+	background: rgba(0, 0, 0, 0) linear-gradient(to bottom, #95b178 0%, #b1d28e 100%) repeat scroll 0 0;
+}
+
+.infotozip-boxs.green {
+	background-color: #b1d28e;
+	border-color: #6b92bd;
+	color: #171515;
+}
+
+dl.infotozip-box.red, .big-tag.red {
+	background: rgba(0, 0, 0, 0) linear-gradient(to bottom, #f10753 0%, #e05151 100%) repeat scroll 0 0;
+}
+
+.infotozip-boxs.red {
+	background-color: #e05151;
+	border-color: #6b92bd;
+	color: #171515;
+}
+
+dl.infotozip-box.download dd.infotozips {
+	color: #fff;
+	margin-top: 0.5em;
+}
+
+dl.infotozip-box.download dd.infotozips a {
+	color: #d21a4e !important;
+	display: inline;
+	padding: 0;
+	text-shadow: none;
+}
+
+dl.download::before {
+	background: rgba(0, 0, 0, 0) url("{{ LINK_THEME_PATH }}/{{ LINK_NO_ARROW }}download-arrow.png") no-repeat scroll 0 0;
+	content: "";
+	display: block;
+	height: 50px;
+	position: absolute;
+	right: 5px;
+	top: 0;
+	width: 47px;
+}
+
+dl.download dt {
+	position: relative;
+	text-transform: uppercase;
+}
+
+dl.download dd {
+	 font-size: 11px;
+}
+</style>
+
+<div class="download-blocks">
+	<dl class="infotozip-box download {{ LINK_COLOUR }}">
+		<dt><a href="{{ LINK_DOWNLOAD }}" target="{{ LINK_REDIRECT }}">{{ LINK_UP_TITLE }}</a></dt>
+		<dd>&nbsp;</dd>
+		<dd><em>{{ LINK_TEXT }}</em></dd>
+	</dl>
+</div>
+
